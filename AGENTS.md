@@ -37,11 +37,16 @@ Why points are represented the way they are, why a cycle has declared terms, why
 
 ## Headings
 
-**Name the section, do not ask a question.** A heading is a label in the sidebar, not a question the page answers. `What you need` becomes `Requirements`. `What sets the price` becomes `Price`. `What is enforced in code` becomes `Enforced in code`, which is the same heading with the question stripped off the front.
+**Name the section, do not ask a question.** A heading is a label in the sidebar, not a question the page answers. `What you need` becomes `Requirements`. `How price is set` becomes `Price`. `Who supplies liquidity` becomes `Liquidity providers`. `What is enforced in code` becomes `Enforced in code`, which is the same heading with the question stripped off the front.
 
-The question form survives in one case only, where the section exists to state a limit and the negative is the point. `What the token is not`. `What is not a risk to you`. `What none of this is`. Everywhere else it is a filler prefix.
+This applies to every question word. `What`, `Where`, `When`, `How`, `Who`, `Why`, and `Which` all read the same way down a sidebar.
 
-Two counts to hold. **Under 10 percent of headings site-wide open with `What`,** and **no page has more than two headings opening with the same word.** The first draft of this site ran at 26 percent with four `What` headings on a single page, which is what reads as machine written.
+Two exceptions.
+
+- **A section that exists to state a limit,** where the negative is the point. `What the token is not`. `What is not a risk to you`. `What the sequence does not require`. One per page at most.
+- **Troubleshooting,** where the heading is the symptom the reader arrives with. `Why a conversion can fail`.
+
+Two counts to hold. **Under 10 percent of headings site-wide open with a question word,** and **no page has more than two headings opening with the same word.** The first draft of this site ran at 26 percent on `What` alone, four of them on a single page, which is what reads as machine written.
 
 The second count catches the replacement formula too. Renaming everything to `Limits of X` is the same mistake with a different word.
 
@@ -214,7 +219,7 @@ Screenshots go only on the four Get Started task pages, after the UI is settled.
 7. Any fact asserted that the whitepaper does not carry
 8. Any date promised on an unresolved value
 9. Word count calculated, not eyeballed
-10. Any heading that opens with a question word where a noun phrase would do
+10. Any heading opening with a question word that is neither a limit nor troubleshooting
 11. Any diagram outside the approved list
 
 ## Open items
