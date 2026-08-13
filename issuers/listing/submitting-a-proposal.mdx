@@ -1,0 +1,52 @@
+---
+title: "Submitting a proposal"
+description: "Stake, submit, criteria check, vote, open."
+---
+
+## Steps
+
+<Steps>
+  <Step title="Stake PAFI">
+    The required amount is determined with reference to the issuance budget you intend to declare.
+  </Step>
+  <Step title="Submit the proposal">
+    Declare the six terms from [Terms and commitments](/issuers/listing/terms-and-commitments).
+  </Step>
+  <Step title="The criteria are checked">
+    Coverage, lock period, staking, and the liquidity placement template are checked before any vote takes place. A proposal that does not meet them does not reach a vote.
+  </Step>
+  <Step title="PAFI stakers vote">
+    Voting and execution are on-chain. A proposal that passes is queued and executes against the contracts after a delay.
+  </Step>
+  <Step title="The cycle opens">
+    Your stablecoin is committed and locked, your terms are recorded, and your pools open at `P0` with your inventory allocation supplied as liquidity.
+
+    <Info>
+      **Not yet set.** The timelock delay is recorded on [Parameters](/developers/parameters).
+    </Info>
+  </Step>
+</Steps>
+
+## What a vote decides
+
+You, and your terms within the checked bounds.
+
+The criteria constrain the terms of a listing. They do not assess your business, your solvency, or the durability of your programme. That assessment is what the vote adds.
+
+## If a proposal does not pass
+
+Your stake is not slashed. Slashing conditions attach to an active listing, and neither of the two is a failed proposal.
+
+Revise the terms and submit again.
+
+## Multiple programmes
+
+Each listing deploys its own token contract with its own cycle, budget, and committed stablecoin. If you run more than one programme you can list more than one point token.
+
+## Renewal
+
+Renewal proposals go through the same route and are decided by the same voters.
+
+**Renewal must be approved before maturity.** An unapproved renewal does not hold a cycle open, and deprecation begins automatically after a grace period. Submit with enough time for a vote and the timelock delay.
+
+See [Running and ending a cycle](/issuers/running/running-and-ending-a-cycle).

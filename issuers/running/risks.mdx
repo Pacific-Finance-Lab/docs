@@ -1,0 +1,80 @@
+---
+title: "Risks for issuers"
+description: "Risks a listing creates for you. Not exhaustive."
+---
+
+This page covers the risks a listing creates for you. It is not exhaustive and may not cover every risk to which you are exposed.
+
+Risks to holders are on [Risks](/learn/risks). The full consolidated statement is in [Risk Disclosures](/resources/legal/risk-disclosures).
+
+## Committed capital
+
+`I` is locked for the lock period you declared. There is no early exit.
+
+If your business needs that capital during the cycle, you cannot have it back. Size `I` against capital you can commit for the full period, not against capital you expect to be able to spare.
+
+## Issuance budget
+
+If conversion demand exceeds `U`, holders cannot convert until either redemptions restore budget or you deposit stablecoin and raise `U`. Both take time.
+
+Setting `U` high avoids that and raises the stablecoin you must commit. There is no setting that avoids both.
+
+## Slashing
+
+Two conditions, both procedural.
+
+**Redemption processing breach** is the one your operations can trigger without any decision on your part. An outage, a queue, or a manual review that runs long can put you past the recorded time. The condition does not distinguish between causes.
+
+**Incomplete deprecation** is the one you trigger by acting out of order at the end of a listing.
+
+A slashed stake goes to the liquidity contract of the point token concerned, with any remainder to the treasury. You do not get it back.
+
+## Key compromise
+
+A compromised signing key can issue up to your remaining budget, and those tokens are real point tokens in the pool.
+
+Your budget is the bound. Nothing smaller bounds it. PAFI does not hold the key and is not responsible for issuance resulting from its exposure.
+
+## Price
+
+Your point token's price is a market outcome and can sit anywhere.
+
+Below `P0` means holders realize less than the price you opened at. Above `P0` means `I` covers fewer point tokens than the budget it was sized against, which matters at the exit window rather than during the cycle.
+
+Neither is a fault condition and nothing in the contracts corrects either.
+
+Price also becomes visible. A programme whose internal value was never observed externally now has a number attached to it, and that number is public, continuous, and not yours to set.
+
+## Thin depth
+
+`L` is fixed for the cycle. If your opening depth turns out to be too thin, you cannot issue more point tokens to deepen it.
+
+You can supply the quote asset and third parties can supply liquidity, but neither is guaranteed. A holder exiting a thin pool incurs slippage and may attribute that experience to your programme.
+
+## Coverage at the exit window
+
+`I` was sized at `P0` against the full budget and does not track price.
+
+Where outstanding supply is at its limit and the exit price is above `P0`, `I` may be insufficient to satisfy every holder at that price. Holders who reach the window later receive less.
+
+## Governance
+
+Your listing is decided by PAFI stakers, and so is your renewal.
+
+A renewal that does not pass, or that is not submitted with enough time for a vote and the timelock delay, results in deprecation. You will have committed capital for a period and then unwound rather than continued.
+
+Global parameter defaults can change. Changes take effect for cycles opened or renewed after the change, so a change does not reach your open cycle. It does reach your next one.
+
+## Regulatory
+
+The treatment of point tokens is unsettled and varies between jurisdictions. A regulator or a court may characterize a point token differently from the characterization in these docs, including as a security, a payment instrument, or a regulated deposit.
+
+Such a determination could restrict participation in certain jurisdictions, require changes to the design described here, or both. It could also reach the off-chain programme the point token represents.
+
+This is your assessment to make for your own jurisdiction and your own programme. PAFI does not make it for you.
+
+## What is not a risk to you
+
+Your off-chain programme is not bound by anything recorded at listing. Your catalogue, your pricing, your eligibility policy, and your redemption terms stay yours and can change during a cycle.
+
+That freedom is also the thing most likely to reduce what your point token is worth. An issuer that meets every recorded term can still hollow out its own market from the inside, and the contracts do not stop it.

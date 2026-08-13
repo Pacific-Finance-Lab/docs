@@ -1,0 +1,108 @@
+---
+title: "Running and ending a cycle"
+description: "Day to day operation, renewal, and the deprecation sequence."
+---
+
+## Day to day
+
+Your backend submits issuance transactions for conversion requests your policy approved. For redemptions you sign the request, the holder approves in their account, and you credit points on the completion event. Stablecoin above the committed amount is withdrawable, additional stablecoin can be deposited at any time, and `U` can be raised while the coverage relation continues to hold.
+
+## Watching your budget
+
+Outstanding supply cannot exceed `U + L`. An issuance transaction that would exceed it fails, and your holder sees that as a failure in your app.
+
+Burning restores budget. Ordinary circulation where holders both convert and redeem does not exhaust it. Sustained one-way conversion does.
+
+If `U` is running out, deposit stablecoin first and then raise `U`. The relation is checked rather than assumed, so a raise that would break it is rejected.
+
+## Watching your pool
+
+Price is set by supply and demand in the pool. You do not set it and you are not obliged to buy at any price.
+
+Depth determines a holder's exit cost. `L` is fixed for the cycle, so additional depth on your side has to come from the quote asset rather than from newly issued point tokens.
+
+Price diverging from what your points are worth inside your systems is normal and can persist. Nothing in the contracts corrects it.
+
+## Redemption processing
+
+The recorded term with a slashing condition attached. Two operational rules follow.
+
+**Use the blockchain event as your source of truth.** Your frontend may receive a transaction hash, but treat it as progress display only. Credit points on the on-chain completion event and prevent duplicate processing.
+
+**Expire requests that never complete.** If a holder closes the confirmation screen, no burn occurs. A redemption request with no response must be expired rather than left open.
+
+See [Redeem point tokens](/issuers/integration/redeem-point-tokens).
+
+## Signing key
+
+Your signing key submits issuance transactions and approves redemption requests. You hold it. PAFI receives the signer address derived from it and never the key.
+
+A compromised key can issue up to your remaining budget. **Treat `U + L` as your exposure ceiling on key compromise** rather than assuming an incident is bounded by anything smaller.
+
+## What you can no longer change
+
+Every recorded term, for the whole cycle.
+
+A change to a global parameter default does not reach into your open cycle. Parameter changes take effect for cycles opened or renewed after the change.
+
+Everything off-chain stays changeable. Your catalogue, your pricing, your eligibility policy, and your redemption terms.
+
+## Approaching maturity
+
+Renewal must be approved before the lock period ends. Submit with enough time for a vote and the timelock delay.
+
+If maturity arrives with no approved renewal, deprecation begins automatically after a grace period.
+
+<Info>
+  **Not yet set.** The grace period and the length of the holder exit window are recorded on [Parameters](/developers/parameters).
+</Info>
+
+## The deprecation sequence
+
+**1. Issuance stops.**
+
+**2. Excess withdrawals freeze.** Stablecoin above the committed amount can no longer be withdrawn.
+
+**3. The holder exit window opens.** Holders exchange point tokens against `I`.
+
+**4. The window closes.**
+
+**5. You withdraw the residual.** What remains of `I`, less the inventory sale fee where applicable.
+
+<Note>
+  **[D2] Diagram.** See [Listing cycles](/learn/listing-cycles). The same timeline serves both pages.
+</Note>
+
+The order is what matters. Your residual comes after the window closes, never before it opens.
+
+Deprecation starts at your request, or automatically at the expiry of the grace period. A holder's access to the exit window does not depend on you taking an action at the time.
+
+## What the exit window is funded from
+
+`I`, exclusively.
+
+It was sized by the coverage relation at `P0` at cycle open. If outstanding supply is at its limit and the exit price is above `P0`, it may be insufficient to satisfy every holder at that price. You cannot top up during deprecation to fix this.
+
+Your stake is not a source of funds for it. Neither is the Deficit Reserve, which requires an affirmative governance vote at the time and is not sized against any particular deficit.
+
+## Releasing your stake
+
+Releasable after the deprecation sequence completes.
+
+Proceeding to withdraw without completing the sequence is one of the two slashing conditions. There is no path where skipping a step is faster.
+
+Approval at the close of a sequence is procedural. Where the defined conditions are met, approval is the expected outcome, and refusal is available only on enumerated grounds.
+
+## What holders can still do
+
+| Path | During deprecation |
+|---|---|
+| Redeem for off-chain points | Available while your integration is active. The one you control |
+| Exchange in the pool | Depends on pool liquidity |
+| Exchange against `I` | Open during the window |
+
+Keeping your integration running through deprecation keeps the first path open. Nothing in the contracts requires it, which is why the third path exists.
+
+## What the sequence does not require
+
+Nothing here requires you to buy back your point token, support its price, or make holders whole. The sequence bounds the order and timing of your withdrawal and nothing more.

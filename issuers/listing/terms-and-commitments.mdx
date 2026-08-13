@@ -1,0 +1,139 @@
+---
+title: "Terms and commitments"
+description: "The six declared terms, the coverage relation, and the two slashing conditions."
+---
+
+A listing proposal declares six terms. This page covers each one, what choosing it does, and what it commits you to.
+
+## The six terms
+
+| Term | Symbol | Sets |
+|---|---|---|
+| Initial reference price | `P0` | Where your pools open |
+| Committed USD stablecoin | `I` | What you deposit and lock |
+| User conversion allocation | `U` | How much holders can convert into |
+| Issuer inventory allocation | `L` | How much you issue to yourself |
+| Lock period | | How long `I` stays locked |
+| Redemption processing commitment | | How long you have to credit points |
+
+`U + L` is your issuance budget. Outstanding supply cannot exceed it.
+
+## `P0`
+
+An opening parameter. It sets where your pools open and it is the price the coverage relation is measured against.
+
+It is not a floor and it is not a redemption value. Once the pools open, price is a market outcome and can sit above or below `P0` in either direction and for extended periods.
+
+Setting `P0` high raises the stablecoin you must commit for the same budget.
+
+## `U` and `L`
+
+`U` is what your holders convert into. Size it against how much of your outstanding point liability you expect converted during the cycle, not against the whole liability.
+
+`L` is what you issue to yourself and supply to the pool as liquidity. This is your opening depth. A thin pool means holders exiting incur slippage and a large sale moves your price materially.
+
+Both count against the same budget and both are measured by the coverage relation, so raising `L` raises what you must commit.
+
+You can raise `U` during the cycle while the coverage relation continues to hold. You cannot raise `L` during the cycle.
+
+## `I`
+
+`I` must satisfy the coverage relation.
+
+```
+I  >=  CR_min x (U + L) x P0
+```
+
+<Info>
+  **Not yet set.** `CR_min` is recorded on [Parameters](/developers/parameters).
+</Info>
+
+Two things about `I` matter more than the number.
+
+**It is sized at `P0` and does not track price.** If outstanding supply is at its limit and the exit price is above `P0`, `I` may be insufficient to satisfy every holder at that price.
+
+**It is the only source of funds for a holder exit window.** Your stake is not. The Deficit Reserve is not.
+
+`I` is deposited at cycle open and locked by contract for the lock period. Anything you hold above it is withdrawable, which is how you take the proceeds of inventory sales during a cycle. An inventory sale fee applies to stablecoin paid out above the committed amount and is not applied to the committed amount itself, so protocol fees do not reduce your principal.
+
+Withdrawals of the excess freeze once deprecation begins. At the close of deprecation, what remains after the holder exit window is your residual.
+
+## Lock period
+
+At least a governance-set minimum. Longer is permitted.
+
+This is the period a holder is exposed to, and the period during which none of your declared terms can be altered, including by you.
+
+Size `I` against capital you can commit for the full period. There is no early exit.
+
+<Info>
+  **Not yet set.** The minimum lock period is recorded on [Parameters](/developers/parameters).
+</Info>
+
+## Redemption processing commitment
+
+The time within which you credit points once a holder redeems a point token.
+
+**This is the one declared term carrying a slashing condition.** Set it to a time your operations can meet on your worst day, not your average one.
+
+It covers processing time only. What the points are worth once credited stays yours.
+
+## The stake
+
+Staked before you submit. Not a declared term, a precondition. A proposal from an issuer that has not met the requirement does not proceed.
+
+The required amount is governance-set and scales with the issuance budget you declare.
+
+<Info>
+  **Not yet set.** The protocol-wide minimum and the relation between budget and required stake are recorded on [Parameters](/developers/parameters).
+</Info>
+
+<Info>
+  **To confirm.** Whether the requirement is assessed per listing or across an issuer's listings in aggregate.
+</Info>
+
+Your stake stays committed while the listing is active and is releasable after the deprecation sequence completes.
+
+## The two slashing conditions
+
+Enumerated in the contracts. There are two, and there is no authority to slash outside them.
+
+| Condition | |
+|---|---|
+| **Incomplete deprecation** | Proceeding to withdraw without completing the deprecation sequence |
+| **Redemption commitment breach** | Breach of the processing time you recorded |
+
+Both turn on a recorded procedure or a recorded term.
+
+**Nothing turns on an assessment of your conduct.** Your stake is not reduced because your programme performed poorly, because your points lost value, because a holder was dissatisfied, or because a listing was judged in hindsight to have been unwise.
+
+A slashed stake goes to the liquidity contract of the point token concerned, with any remainder to the treasury. That transfer changes the contract's balance and does not create a claim, an entitlement, or a right of recovery for any individual holder.
+
+## Pairs and liquidity placement
+
+Every point token has a USD stablecoin pair, created for you.
+
+You may additionally declare a PAFI pair, which makes liquidity providers already holding PAFI able to supply your market on the day it opens.
+
+Your opening liquidity must be placed within the ranges a standard template permits. Within that template you choose the distribution.
+
+<Info>
+  **Not yet set.** The template is recorded on [Parameters](/developers/parameters).
+</Info>
+
+## During a cycle
+
+| Can | Condition |
+|---|---|
+| Deposit additional stablecoin | Any time |
+| Raise `U` | While the coverage relation continues to hold |
+| Withdraw stablecoin above the committed amount | Until deprecation begins |
+
+| Cannot | |
+|---|---|
+| Withdraw `I` | During the lock period |
+| Issue beyond `U + L` | |
+| Raise `L` | |
+| Alter any recorded term | |
+| Withdraw the excess | Once deprecation has begun |
+| Take a residual | Before the holder exit window has closed |
