@@ -1,0 +1,80 @@
+---
+title: "PAFI Agent"
+description: "What the agent can do and what bounds it."
+---
+
+The PAFI Agent takes instructions in ordinary language and carries out actions on point tokens. A holder with no prior experience of an on-chain exchange can use it without learning one. PAFI refers to this capability as the Zero-Barrier DeFi Experience.
+
+## What you can ask it to do
+
+| | Action |
+|---|---|
+| **Convert** | Exchange point tokens for a USD stablecoin |
+| **Convert to another asset** | Exchange point tokens for an asset other than the stablecoin, routed through the stablecoin |
+| **Open a position** | Convert point tokens, deposit the proceeds as margin at an integrated venue, and open a position there, in one instruction |
+| **Set a rule** | Save any of the above to run when a condition you define is met |
+
+Instructions look like this.
+
+```
+Convert half my points.
+Convert everything if the price goes above 1.05.
+Every Monday, convert ten percent of my points.
+Open a long on the gold market with 2,000 points.
+```
+
+## Two ways it runs
+
+**You ask, then confirm.** The agent resolves your instruction into a concrete action, returns the resolved parameters and the expected cost, and executes on your confirmation of what was shown. Where the terms change materially between the two, the action returns for confirmation rather than proceeding.
+
+**A rule runs on its own.** You define the condition and the action once. The rule then runs when the condition is met, including while you are away.
+
+## What a rule is made of
+
+| Part | Options |
+|---|---|
+| **Trigger** | A price level, a change in balance, a schedule, or a combination |
+| **Action** | Any of the four above, or notify only |
+| **Amount** | A fixed amount, or a percentage of balance |
+
+Notify only means the rule tells you the condition was met and you act yourself. Nothing executes.
+
+## What a rule is bounded by
+
+A rule runs under a permission you issue when you create it, bounded on every axis.
+
+| Bound | |
+|---|---|
+| Functions | Only the functions that action needs |
+| Amount per execution | Capped |
+| Amount per period | Capped |
+| Executions per period | Capped |
+| Slippage | Capped |
+| Validity | Expires |
+| Revocation | Withdrawable at any time |
+
+<Info>
+  **Not yet set.** The default caps are recorded on [Parameters](/developers/parameters).
+</Info>
+
+Unlimited delegation is not offered.
+
+## Where output goes
+
+**Every action returns its output to your own account.** Stablecoin from a conversion arrives in your account. A position opened at an integrated venue sits in a margin account you own. No path sends output anywhere else.
+
+## What it reports without being asked
+
+The agent reports state that bears on a decision you may want to make. Point tokens arriving from a conversion. A price condition you set being met. A rule having run, or having failed. A permission approaching expiry.
+
+A report is dismissible, and what follows from one is yours to choose. It reaches execution through the same review and confirmation as anything else.
+
+## Where the model stops
+
+Interpreting your request and reading state are the model's part. It can read your balances, market state, your positions, and your rules.
+
+Sizing, the construction of a transaction, its submission, and the signature that authorizes it are deterministic paths outside the model. The model has no transaction, signing, deposit, order, or execution tool, and never receives keys.
+
+Your account identity and the chain an action runs on come from the authenticated session rather than from anything the model produces.
+
+What the agent is and is not is stated in [Who operates what](/learn/who-operates-what).

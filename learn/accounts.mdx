@@ -1,0 +1,28 @@
+---
+title: "Accounts"
+description: "One account across every entry point."
+---
+
+A holder with a wallet of their own connects it. A holder without one signs in with a method they already use, and the resulting account is a self-custodial embedded wallet, powered by third-party infrastructure.
+
+## One account across every entry point
+
+An account created from an issuer's application and an account created from the PAFI web app are the same account.
+
+The same sign-in reaches it from every integrated application, holding the same balances. Point tokens from every issuer a holder has converted with sit in one place, and signing in from a second application does not create a second account.
+
+## Network fees
+
+Gas sponsorship is designed so that a holder without a gas token can transact. The network fee for an action is settled in the asset that action already involves.
+
+## Availability
+
+The account layer is powered by third-party infrastructure, so its availability is a property of that infrastructure rather than of the contracts. A holder may instead connect a wallet of their own.
+
+## Integration interfaces
+
+An issuer connects an existing point system to the Gateway through a published interface, while keeping that system where it is.
+
+The same interface is available to applications that offer conversion, Gateway trading, or onward routing to their own users.
+
+Specifications are in the [Integration API](/developers/integration-api).

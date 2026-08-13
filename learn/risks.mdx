@@ -1,0 +1,107 @@
+---
+title: "Risks"
+description: "Risks of holding a point token. Not exhaustive."
+---
+
+This page covers the risks of holding a point token. **It is not exhaustive and may not cover every risk to which you are exposed.**
+
+| You are | Also read |
+|---|---|
+| Listing a programme | [Risks for issuers](/issuers/running/risks) |
+| Holding or staking PAFI | The PAFI token section below, and [Governance](/governance/overview) |
+
+The full consolidated statement is in [Risk Disclosures](/resources/legal/risk-disclosures).
+
+## Issuer risk
+
+An issuer can stop operating its point programme, stop processing redemptions, or exit the Gateway. Any of these removes the utility a point token derives its value from.
+
+Three things bound what an issuer can do. It cannot issue beyond the limit recorded for the cycle. It cannot withdraw its committed stablecoin during the cycle. And it cannot take a residual before the holder exit window has closed.
+
+**None of those bound what its points are worth.** An issuer that meets every recorded term can still change its prices, its catalogue, or its redemption terms, and those decisions sit entirely outside anything recorded at listing.
+
+## Market and liquidity risk
+
+Price is set by supply and demand in the pool. A pool may be thin, in which case exchange incurs slippage and a large sale moves the price materially.
+
+Price can diverge from the value the issuer assigns to the same points internally, in either direction and for extended periods.
+
+Neither the Gateway nor the issuer is obliged to buy at any price. A holder who exits when depth is low bears that cost.
+
+## Coverage risk
+
+The committed stablecoin funding a holder exit window was sized at the opening price at cycle open.
+
+It is not a claim to a fixed amount per point token, and it does not track price. Where outstanding supply is at its limit and the exit price is higher than the price coverage was sized against, the committed amount may be insufficient to satisfy every holder at that price.
+
+## Deprecation timing risk
+
+A cycle can enter deprecation because the issuer requested it or because maturity arrived without an approved renewal.
+
+The holder exit window is finite. Watch for the announcement of deprecation rather than assuming the window is long, and do not assume that a redemption path through the issuer stays open through it.
+
+## Governance risk
+
+Listings are decided by PAFI stakers, and a listing that was approved may later fail.
+
+The criteria applied before a vote constrain the terms of a listing. They do not assess an issuer's business, its solvency, or the durability of its point programme.
+
+Governance participation may be low, or concentrated among a small number of stakers.
+
+The benefit of an approval accrues to those who voted for it, while the cost of a failure is spread across all stakers. Deferring vote rewards narrows this and does not remove it.
+
+Parameter changes take effect for cycles opened or renewed after the change, so a change in global defaults does not alter the terms of a cycle a holder is already exposed to.
+
+## Routing and venue risk
+
+Where a holder routes stablecoin to an integrated venue, that venue's terms, custody arrangements, availability, and regulatory status determine what happens there.
+
+Routing is optional, is selected by the holder, and no destination is privileged by the protocol. PAFI does not operate those venues, does not hold user margin at them, and does not assume counterparty risk for positions opened there.
+
+A path that passes through a PAFI pair carries the price movement of PAFI in addition to that of the point token. The direct stablecoin pair remains available, and the choice of path rests with the party whose trade takes it.
+
+## Smart contract and data risk
+
+The protocol's contracts may contain errors, and losses arising from a contract error may be unrecoverable.
+
+The contracts are upgradeable and upgrade authority rests with governance, which means the code governing a position may change over the period a participant holds it. Within an open cycle, the terms recorded for that cycle cannot be altered.
+
+On-chain state reflects issuance and circulation as recorded through the integration. It does not verify the accuracy of an issuer's off-chain accounting, and a discrepancy between an issuer's internal records and its on-chain representation would not be detected at the protocol level.
+
+## Account risk
+
+An account is self-custodial. Keys are on the holder's side, not held by the issuer's application and not by PAFI.
+
+The account layer is powered by third-party infrastructure, so its availability is a property of that infrastructure rather than of the contracts. A holder may instead connect a wallet of their own.
+
+## Automation risk
+
+A rule set with the [PAFI Agent](/learn/pafi-agent) runs when its condition is met without asking again.
+
+A rule is bounded by the caps set when it was created and can be revoked at any time. Within those bounds it executes, including at prices the holder may not have wanted, because the condition rather than the price is what triggers it.
+
+An ambiguous instruction carries the same risk as a transaction entered by hand.
+
+## Regulatory risk
+
+The treatment of point tokens, of the PAFI token, and of the activity described in these docs is unsettled and varies between jurisdictions.
+
+A regulator or a court may characterize any of them differently from the characterization here, including as securities, as payment instruments, or as regulated deposits. Such a determination could restrict or prohibit participation in certain jurisdictions, require changes to the design described here, or both.
+
+The availability of integrated venues, and of particular quote assets, is subject to the same variation and is determined by those venues and their issuers rather than by the protocol.
+
+## PAFI token risk
+
+PAFI is a utility token. Its functions are limited to governance, issuer staking, fee benefits, and ecosystem incentives, and it confers no equity, no ownership, no debt, and no right to profits, dividends, revenues, or returns of any kind.
+
+Issuer stakes are denominated in PAFI. The circumstances in which one would be reduced, namely an issuer failing on recorded terms, are also the circumstances in which demand for PAFI is most likely to be weak. Holdings are worth least at the moment the protocol is under stress.
+
+Total supply is 1,000,000,000 PAFI and 65% sits in the Community and Ecosystem allocation, released on a declining emission schedule. The schedule on which allocations unlock affects circulating supply over time. See [PAFI token](/governance/pafi-token).
+
+A staker who approves a listing that subsequently fails forfeits the reward recorded against that proposal. The stake itself is not reduced. See [Vote rewards](/governance/vote-rewards).
+
+## What none of this is
+
+The constraints described above are properties of the contracts as deployed. They are not undertakings by PAFI and they do not transfer any participant's exposure to the protocol.
+
+Responsibility for the terms an issuer declares, and for the consequences of those terms, rests with the issuer and with individual market participants.
