@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "PAFI",
   "colors": {
     "primary": "#16A34A",
     "light": "#07C983",
@@ -9,29 +9,109 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "pages": [
+    "groups": [
       {
-        "group": "Getting Started",
+        "group": "Get Started",
         "pages": [
           "index",
-          "quickstart"
+          "get-started/account",
+          "get-started/convert",
+          "get-started/exchange",
+          "get-started/route"
+        ]
+      },
+      {
+        "group": "Learn",
+        "pages": [
+          "learn/how-pafi-works",
+          "learn/life-of-a-point",
+          "learn/gateway-and-pricing",
+          "learn/fees",
+          "learn/listing-cycles",
+          "learn/liquidity-routing",
+          "learn/accounts",
+          "learn/pafi-agent",
+          "learn/who-operates-what",
+          "learn/risks",
+          "learn/glossary"
+        ]
+      },
+      {
+        "group": "For Issuers",
+        "pages": [
+          "issuers/overview",
+          {
+            "group": "Listing",
+            "pages": [
+              "issuers/listing/terms-and-commitments",
+              "issuers/listing/submitting-a-proposal"
+            ]
+          },
+          {
+            "group": "Integration",
+            "pages": [
+              "issuers/integration/how-it-works",
+              "issuers/integration/get-ready",
+              "issuers/integration/connect-an-account",
+              "issuers/integration/issue-point-tokens",
+              "issuers/integration/redeem-point-tokens",
+              "issuers/integration/go-live"
+            ]
+          },
+          {
+            "group": "Running a listing",
+            "pages": [
+              "issuers/running/running-and-ending-a-cycle",
+              "issuers/running/risks"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Governance",
+        "pages": [
+          "governance/overview",
+          "governance/pafi-token",
+          "governance/listing-and-renewal-votes",
+          "governance/vote-rewards",
+          "governance/deficit-reserve"
+        ]
+      },
+      {
+        "group": "Developers",
+        "pages": [
+          "developers/integration-api",
+          "developers/contracts",
+          "developers/addresses",
+          "developers/parameters",
+          "developers/events"
+        ]
+      },
+      {
+        "group": "Security",
+        "pages": [
+          "security/audits",
+          "security/bug-bounty",
+          "security/official-domains"
+        ]
+      },
+      {
+        "group": "Resources",
+        "pages": [
+          "resources/whitepaper",
+          "resources/brand-kit",
+          {
+            "group": "Legal",
+            "pages": [
+              "resources/legal/terms-of-use",
+              "resources/legal/privacy-policy",
+              "resources/legal/disclaimers",
+              "resources/legal/risk-disclosures"
+            ]
+          }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/logo/light.svg",
@@ -40,15 +120,10 @@
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Whitepaper",
+        "href": "/resources/whitepaper"
       }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
-    }
+    ]
   },
   "contextual": {
     "options": [
@@ -61,12 +136,5 @@
       "cursor",
       "vscode"
     ]
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
   }
 }
