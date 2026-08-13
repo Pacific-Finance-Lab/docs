@@ -1,6 +1,6 @@
 ---
 title: "How PAFI works"
-description: "The four components, the two domains, and what is enforced in code."
+description: "The four components, the five parties, and what is enforced in code."
 ---
 
 PAFI has four components. This page is the map of them. For what happens to a single point balance from earning to exit, read [The life of a point](/learn/life-of-a-point).
@@ -24,11 +24,17 @@ The on-chain domain holds the terms recorded for a cycle, the pools, and the rou
 | **Access layer** | The accounts and interfaces through which holders reach the Gateway |
 | **Integration interfaces** | The interfaces through which an issuer connects a point system, and through which applications offer conversion, trading, or routing to their own users |
 
-## Roles
+## The five parties
 
-An issuer sets its own programme and declares the terms on which its point token trades. PAFI stakers decide whether those terms open a market. PAFI operates the Gateway and the routing layer. Integrated venues operate their own markets.
+Five parties act along the path. Each acts on its own account.
 
-Enumerated in [Who operates what](/learn/who-operates-what).
+| Party | Operates |
+|---|---|
+| **The issuer** | Its own point system, ledger, eligibility policy, and off-chain redemption terms. What a point is, what it is worth off-chain, and whether it can be returned for off-chain goods, services, or rewards |
+| **PAFI** | The Gateway's spot exchange for point token conversion, together with the routing, data, and settlement infrastructure that connects the resulting liquidity to integrated venues |
+| **PAFI stakers, through governance** | Listing and renewal decisions, global parameter defaults, and the authority to upgrade the contracts |
+| **An integrated venue** | Its own markets, under its own licenses and registrations. Margin accounts, order matching, funding, and liquidation sit there, under its own risk engine |
+| **The holder** | The decision to convert, to exchange, to hold, to withdraw, or to route, and the choice of path for each |
 
 ## Enforced in code
 
@@ -37,3 +43,9 @@ Enumerated in [Who operates what](/learn/who-operates-what).
 3. An issuer's committed stablecoin cannot leave its position other than through the recorded paths.
 
 See [Governance](/governance/overview) for what can still be changed and how.
+
+## Scope
+
+PAFI functions as gateway and liquidity-routing infrastructure. It is not an issuer, a custodian, or a guarantor of any point or of any asset represented on the Gateway. It does not operate, and does not hold a license for, leveraged perpetual, margin, or securities derivatives trading. It does not set or enforce an issuer's off-chain redemption or utilization policy. Beyond the infrastructure described above it does not intermediate between an issuer and a holder, or between a holder and an integrated venue, and it does not guarantee listing, execution terms, or liquidity at any venue. The PAFI Agent provides neither investment advice nor discretionary asset management.
+
+The PAFI protocol is non-custodial infrastructure. Responsibility for the terms an issuer declares, and for the consequences of those terms, rests with the issuer and with individual market participants.

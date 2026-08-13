@@ -11,7 +11,7 @@ Read [`AGENTS.md`](./AGENTS.md) first. It carries the source of truth order, the
 ```
 index.mdx            Welcome
 get-started/         4 task pages
-learn/               11 concept pages
+learn/               10 concept pages
 issuers/             Overview, Listing, Integration, Running a listing
 governance/          Governance, PAFI token, votes, rewards, Deficit Reserve
 developers/          Integration API, Contracts, Addresses, Parameters, Events
