@@ -81,7 +81,7 @@ These are elements of regulatory definitions. Introducing the word is the risk, 
 | `provide`, `provider` with PAFI as subject | MiCA CASP, FATF VASP |
 | `manage`, `administer`, `custody`, `safekeep`, `control` with PAFI as subject | FATF 2021 para 73 |
 | `share`, `shared wallet` | Implies the account is the operator's property |
-| `discretionary` | Exactly one occurrence site-wide, in `learn/who-operates-what.mdx` |
+| `discretionary` | Exactly one occurrence site-wide, in `learn/how-pafi-works.mdx` |
 | `protect`, `protection`, `safeguard` | Zero site-wide |
 | `insurance` | Zero site-wide |
 
@@ -158,7 +158,7 @@ Not scattered through the body. Only these pages.
 
 | Page | Carries |
 |---|---|
-| `learn/who-operates-what.mdx` | The five parties. The single permitted `discretionary` |
+| `learn/how-pafi-works.mdx` | The Scope section. The five parties and the single permitted `discretionary` |
 | `learn/liquidity-routing.mdx` | Licensing |
 | `learn/risks.mdx` | Holder and general risk |
 | `issuers/running/risks.mdx` | Issuer risk only |
