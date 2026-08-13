@@ -1,0 +1,79 @@
+---
+title: "The life of a point"
+description: "The five states a point balance passes through."
+---
+
+A point balance passes through five states between being earned and leaving the system.
+
+<Note>
+  **[D5] Diagram.** Lifecycle. Five states with the transitions between them. This is the page other sections point back to for context.
+</Note>
+
+## What a point token is
+
+A transferable on-chain representation of an issuer-defined point balance.
+
+Its value comes from issuer-defined utility and nothing further. Representing points on-chain does not alter what the issuer accepts the underlying points for, and PAFI does not standardize or enforce point utility, redemption, or off-chain policy.
+
+Each listing deploys its own token contract, so an issuer running more than one programme can list more than one point token. Point tokens are not interchangeable with one another.
+
+## Earned
+
+A consumer earns points in the issuer's application. The balance is credited in the issuer's own ledger.
+
+Nothing is on-chain yet, and nothing about this state changes when a programme lists.
+
+## Converted
+
+The holder requests conversion. The issuer's own systems evaluate the request against its own eligibility policy, deduct the points, and issue point tokens to the holder's account.
+
+The issuer submits this. The holder signs nothing.
+
+## Held and exchanged
+
+The point token sits in the holder's account. It can be held, transferred, or exchanged in the Gateway's pools against a USD stablecoin or against PAFI.
+
+Price here is a market outcome rather than a redemption value, and it can sit above or below what the same points are worth inside the issuer's systems.
+
+## Returned, or moved on
+
+Three exits, each depending on a different condition.
+
+| Exit | Depends on |
+|---|---|
+| Redeem for off-chain points | The issuer's integration being active |
+| Exchange in the pool | Pool liquidity |
+| Exchange against the issuer's committed stablecoin | A holder exit window being open |
+
+They do not fail together, which is why there are three.
+
+| Situation | Path |
+|---|---|
+| The holder wants to keep using the issuer's programme | Redeem |
+| The holder wants stable value now, and the pool has depth | Exchange in the pool |
+| The issuer has stopped processing redemptions | Exchange in the pool |
+| The listing is in deprecation | Exit window, or exchange |
+
+Stablecoin realized in the second and third can be held, withdrawn, or routed to an integrated venue.
+
+## End of cycle
+
+At maturity the cycle renews on terms approved in advance, or enters deprecation.
+
+Renewal continues everything above. Deprecation stops issuance, opens the holder exit window, and only then releases any residual to the issuer.
+
+See [Listing cycles](/learn/listing-cycles).
+
+## How much can be converted
+
+A listing carries an issuance limit and conversion stops when outstanding supply reaches it. Redeeming frees the limit again, so a programme where holders both convert and redeem does not exhaust it through ordinary circulation.
+
+The limit and how it is set are in [Terms and commitments](/issuers/listing/terms-and-commitments).
+
+## Where to go next
+
+| You are | Read |
+|---|---|
+| Converting your own points | [The Gateway and pricing](/learn/gateway-and-pricing) |
+| Listing a programme | [For Issuers](/issuers/overview) |
+| Voting on a listing | [Governance](/governance/overview) |

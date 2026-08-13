@@ -1,0 +1,66 @@
+---
+title: "The Gateway and pricing"
+description: "How price is set, what coverage does, and how pairs and routes work."
+---
+
+The Gateway is a permissionless, issuer-gated spot exchange. Point tokens are exchanged in it against a USD stablecoin or against PAFI.
+
+Issuer-gated means a market opens only for an issuer whose listing governance approved. Permissionless means that once a market is open, anyone may trade in it and anyone may supply liquidity to it.
+
+## Two numbers, not one
+
+**What the issuer accepts its points for.** Set by the issuer in its own systems, under its own policy.
+
+**What a point token trades at on the Gateway.** Set by supply and demand in the pool.
+
+Neither one determines the other, and the gap between them can be wide and persistent in either direction.
+
+## Quote assets
+
+"USD stablecoin" means a transferable digital asset designed to maintain a stable value of one United States dollar and redeemable by its issuer for that value.
+
+Which stablecoins are supported is determined by governance. See [Parameters](/developers/parameters).
+
+## How price is set
+
+Supply and demand within each pool. The Gateway does not impose pricing constraints.
+
+The initial reference price declared in a listing proposal is an opening parameter. Price thereafter is a market outcome.
+
+Two consequences follow.
+
+**Price can diverge from off-chain value.** It can sit above or below the value an issuer assigns to the same points within its own systems, in either direction and for extended periods.
+
+**Depth determines exit cost.** A pool may be thin, in which case exchange incurs slippage and a large sale moves price materially. A holder who exits when pool depth is low bears the resulting cost.
+
+## What coverage does and does not do
+
+An issuer commits USD stablecoin at cycle open, sized against the issuance budget at the initial reference price.
+
+That commitment funds a holder exit window during deprecation. It does not support price during the cycle and does not track price after the cycle opens. Neither the Gateway nor the issuer is obliged to buy at any price.
+
+See [Listing cycles](/learn/listing-cycles) and [Risks](/learn/risks).
+
+## Who supplies liquidity
+
+The issuer, users, or third parties.
+
+At pool opening the issuer supplies its inventory allocation as liquidity, on the terms declared in its listing proposal. Liquidity may be placed across price ranges, so an issuer can distribute that allocation over a defined range rather than at a single level.
+
+Beyond the declared terms, participation is open and permissionless.
+
+## Pairs and routes
+
+Every integrated point token has a stablecoin pair. A PAFI pair is additional and an issuer may declare one.
+
+The **stablecoin pair** is the primary route. It is maintained for every point token, and it is the pair through which point value is realized as stable-value liquidity and through which exchange against committed coverage occurs.
+
+Any two point tokens are already reachable from one another through their stablecoin pairs. Those pairs do not share depth, which is what a **PAFI pair** changes. Liquidity supplied to one point token's stablecoin pair serves that point token only, so an issuer joining the Gateway must attract depth for its own market from the beginning, and a liquidity provider wanting exposure across several point markets must hold a separate stablecoin position in each.
+
+A liquidity provider holding PAFI can supply into any point token paired against it. Depth contributed once is available to every market in that set. For a newly listed point token, a PAFI pair makes existing ecosystem liquidity reachable on the day it opens.
+
+The router treats the PAFI path as one candidate among others and selects on observable pool state. A two-hop path carries the price variance of the intermediate asset, borne by the party whose trade takes that path.
+
+Coverage is unaffected by any of this. It is the USD stablecoin the issuer committed, exclusively.
+
+See [Fees](/learn/fees) for what trading costs.

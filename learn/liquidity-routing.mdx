@@ -1,0 +1,46 @@
+---
+title: "Liquidity routing and venues"
+description: "How realized liquidity reaches markets operated elsewhere."
+---
+
+Stablecoin liquidity realized on the Gateway is delivered to integrated venues through a single routing layer.
+
+A holder who has converted point tokens can move that liquidity into a destination market without opening a separate account relationship with it, and without first acquiring that venue's native gas asset.
+
+## The division
+
+PAFI operates the conversion market and the routing layer. Execution, margin custody, and market integrity at the destination remain with the destination venue.
+
+Integration fixes that division for each venue, together with the settlement cadence between the two.
+
+## Destinations
+
+Destinations include perpetual exchanges, centralized exchanges, neobanking rails, and consumer applications that settle in stablecoins.
+
+The markets available at each are that venue's own, operated under its own licenses and registrations. Its listings, leverage parameters, and regional eligibility are set there.
+
+The first markets to clear integration are perpetual futures on major crypto assets, followed by perpetual markets referencing commodity prices such as gold and silver, and perpetual markets referencing equity indices and individual equity prices. A market becomes reachable when an integration for it exists.
+
+Integrated venues are listed on [Contracts](/developers/contracts).
+
+## Price-referenced throughout
+
+Exposure is to price movement and carries no delivery, no ownership, no voting right, and no dividend, so no physical settlement, custody, or warehousing arises at any point along the path.
+
+<Note>
+  A price-referenced perpetual can diverge from the market it tracks, and outside that market's trading hours it reflects expected movement rather than executed trades.
+</Note>
+
+Margin accounts, order matching, funding, and liquidation are the destination venue's, under its own risk engine.
+
+## Routing is optional
+
+A holder may hold the converted stablecoin, withdraw it, or deploy it elsewhere. Eligibility as a destination is a property of the integration rather than of the asset class, and no destination is privileged by the protocol.
+
+## Licensing
+
+PAFI does not hold, and does not intend to hold, licenses for the operation of leveraged derivatives, swaps, or securities trading.
+
+All perpetual futures, margin, and price-referenced derivatives activity reachable through routing is executed on integrated venues. Each venue is solely responsible for obtaining and maintaining the licenses, registrations, and permissions applicable to its own activity, and for determining the jurisdictions in which it may lawfully offer its services.
+
+PAFI maintains integration criteria that a venue is expected to satisfy, including as to regulatory status. PAFI does not verify, warrant, or assume responsibility for a venue's regulatory compliance.

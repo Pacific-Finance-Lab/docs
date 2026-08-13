@@ -1,0 +1,39 @@
+---
+title: "How PAFI works"
+description: "The four components, the two domains, and what is enforced in code."
+---
+
+PAFI has four components. This page is the map of them. For what happens to a single point balance from earning to exit, read [The life of a point](/learn/life-of-a-point).
+
+<Note>
+  **[D1] Diagram.** Topology. Issuer system, Gateway, routing layer, integrated venues, and the interfaces between them. Whitepaper Figure 1 needs updating for this.
+</Note>
+
+## Two domains
+
+The off-chain domain is the issuer's. Its applications, its ledger, its eligibility policy, and its redemption terms sit there and stay there.
+
+The on-chain domain holds the terms recorded for a cycle, the pools, and the routing layer.
+
+## The four components
+
+| Component | What it is |
+|---|---|
+| **PAFI Gateway** | A permissionless, issuer-gated on-chain spot exchange in which point tokens are exchanged against a USD stablecoin or against PAFI |
+| **Routing layer** | The layer connecting liquidity realized on the Gateway to integrated venues |
+| **Access layer** | The accounts and interfaces through which holders reach the Gateway |
+| **Integration interfaces** | The interfaces through which an issuer connects a point system, and through which applications offer conversion, trading, or routing to their own users |
+
+## Who decides what
+
+An issuer sets its own programme and declares the terms on which its point token trades. PAFI stakers decide whether those terms open a market. PAFI operates the Gateway and the routing layer. Integrated venues operate their own markets.
+
+Enumerated in [Who operates what](/learn/who-operates-what).
+
+## What is enforced in code
+
+1. The terms recorded for a cycle cannot be altered while that cycle is open.
+2. Issuance in excess of the budget recorded for a cycle cannot be authorized.
+3. An issuer's committed stablecoin cannot leave its position other than through the recorded paths.
+
+See [Governance](/governance/overview) for what can still be changed and how.
