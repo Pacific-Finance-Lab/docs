@@ -21,19 +21,17 @@ At maturity the cycle renews on terms approved in advance, or enters deprecation
   **[D2] Diagram.** Cycle timeline. Open, operate, maturity, then renewal or grace and deprecation, holder exit window, residual.
 </Note>
 
-## What an issuer declares
+## Declared terms
 
 An opening price. An amount of USD stablecoin it deposits and locks for the cycle. A limit on how many point tokens can be outstanding. How long the stablecoin stays locked. And how quickly it undertakes to credit points when a holder redeems.
 
-## What the criteria require
+## Listing criteria
 
 The committed stablecoin must cover the issuance limit valued at the opening price, by a governance-set margin. The lock period must be at least a governance-set minimum. The issuer must have met the staking requirement. And opening liquidity must be placed within a standard template.
 
+A proposal that reaches a vote already meets all four. What voters decide is the issuer and its terms within those bounds.
+
 The terms, the relation between them, and how to choose them are in [Terms and commitments](/issuers/listing/terms-and-commitments). The governance-set values are on [Parameters](/developers/parameters).
-
-## What the criteria do and do not check
-
-A proposal that reaches a vote already meets the coverage, period, staking, and template requirements. What voters decide is the issuer and its terms within those bounds.
 
 ## Deprecation
 
@@ -45,7 +43,7 @@ There is no state in which the lock period has expired and the timing of withdra
 
 See [Risks](/learn/risks) and [Running and ending a cycle](/issuers/running/running-and-ending-a-cycle).
 
-## What this bounds
+## The limits of a cycle
 
 The quantity and the sequence of an issuer's actions.
 
