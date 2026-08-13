@@ -1,0 +1,55 @@
+---
+title: "Overview"
+description: "What governance can and cannot do, and what it sets."
+---
+
+Governance is the owner of the protocol's contracts, controlled by PAFI stakers.
+
+It decides listings and renewals, sets the global parameter defaults every listing is checked against, and holds the authority to upgrade the contracts.
+
+## How a decision executes
+
+Voting and execution are on-chain. A proposal that passes is queued and executes against the contracts after a delay.
+
+Execution follows the recorded outcome rather than an assessment of it, so nothing sits between a passed vote and what happens.
+
+<Info>
+  **Not yet set.** The timelock delay is recorded on [Parameters](/developers/parameters).
+</Info>
+
+## What governance sets
+
+Global defaults set the bounds. A listing proposal may specify per-token values within them.
+
+| Parameter | Governs |
+|---|---|
+| `CR_min` | The minimum coverage ratio a listing must meet |
+| Minimum lock period | The shortest cycle a listing may declare |
+| Staking minimum | The floor on an issuer's stake, and how it scales with declared budget |
+| Liquidity placement template | The ranges within which opening liquidity may be placed |
+| Grace period | How long after maturity before deprecation begins automatically |
+| Holder exit window length | How long holders have to exchange against committed stablecoin |
+| Timelock delay | How long a passed proposal is queued before execution |
+| Fee rates | The swap protocol fee and the inventory sale fee |
+| Supported quote assets | Which stablecoins may be used as quote assets |
+| Lock-up tiers and fee discounts | What locking PAFI returns |
+
+<Info>
+  **Not yet set.** Current values are recorded on [Parameters](/developers/parameters).
+</Info>
+
+## When a parameter change takes effect
+
+For cycles opened or renewed after the change.
+
+A change in global defaults does not reach into an open cycle. An issuer that met `CR_min` at listing does not have to meet a higher one while that cycle is open, and a holder exposed to a cycle is exposed to the terms recorded when it opened.
+
+## What governance cannot do
+
+Three constraints are enforced in code rather than by policy. The terms recorded for a cycle cannot be altered while that cycle is open. Issuance in excess of the budget recorded for a cycle cannot be authorized. And an issuer's committed stablecoin cannot leave its position other than through the recorded paths.
+
+These are properties of the contracts as deployed. Governance holds the authority to upgrade the contracts, so they describe what the deployed code does rather than a permanent limit on what governance could ever decide. The queue and delay before execution are the mechanism by which an upgrade becomes visible before it takes effect.
+
+## Participation
+
+Governance participation may be low, or concentrated among a small number of stakers. A listing decided by few voters executes on the same terms as one decided by many.

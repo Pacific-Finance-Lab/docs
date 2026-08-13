@@ -1,0 +1,42 @@
+---
+title: "Vote rewards"
+description: "Deferred recording, release, and forfeiture."
+---
+
+Voting on a listing or renewal proposal records a reward against that proposal. Nothing is paid at the time of the vote.
+
+## Recording and release
+
+A reward is recorded when the vote is cast. It is released when the point token to which the proposal relates completes its subsequent cycle without incident, and claiming it requires the account to still hold stake at that point.
+
+Rewards are funded from protocol fee streams and from the ecosystem allocation.
+
+<Info>
+  **Not yet set.** Reward sizing and the definition of completing without incident are governance-set. See [Parameters](/developers/parameters).
+</Info>
+
+Deferral couples a voter's return to the outcome of the decision rather than to the act of participating.
+
+## Forfeiture
+
+A staker who approves a listing that subsequently fails forfeits the reward recorded against that proposal.
+
+That is the whole of the consequence. The stake itself is not reduced and no other position is affected.
+
+## What a voter stake is not
+
+It is not slashable in connection with a listing outcome, and it is not a source of funds for a holder exit window.
+
+Funding a holder exit window belongs to the issuer's committed stablecoin. Deterring the two enumerated issuer failures belongs to the issuer's own stake. Neither function touches a voter's principal.
+
+## Claiming
+
+A reward requires the account to still hold stake when the reward releases.
+
+Unstaking before then gives up rewards recorded against proposals whose cycles have not yet completed.
+
+## What remains unaddressed
+
+The benefit of an approval accrues to those who voted for it, while the cost of a failure is spread across all stakers. Deferring rewards narrows this and does not remove it.
+
+See [Risks](/learn/risks).

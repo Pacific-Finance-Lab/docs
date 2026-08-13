@@ -1,0 +1,49 @@
+---
+title: "Listing and renewal votes"
+description: "What comes to a vote and what a vote decides."
+---
+
+Listing and renewal proposals are decided by PAFI stakers. Parameter and upgrade proposals go to the same vote.
+
+## What a listing proposal contains
+
+Six declared terms. An opening price, an amount of USD stablecoin the issuer deposits and locks, an issuance budget split into a user conversion allocation and an issuer inventory allocation, a lock period, and a redemption processing commitment.
+
+Full detail in [Terms and commitments](/issuers/listing/terms-and-commitments).
+
+## What has already been checked
+
+Four criteria are applied before any vote takes place, and a proposal that does not meet them does not reach a vote.
+
+| Criterion | |
+|---|---|
+| Coverage | `I >= CR_min x (U + L) x P0` |
+| Lock period | At least a governance-set minimum |
+| Staking | The issuer has met the requirement |
+| Liquidity placement | Within a standard template |
+
+## What a vote decides
+
+The issuer and its terms within those floors.
+
+The criteria constrain the terms of a listing. **They do not assess an issuer's business, its solvency, or the durability of its point programme.** That assessment is what a vote adds.
+
+Five things bear on it. How large the programme behind the points is, how long it has run, and how much consumption it is issued against. Whether the declared issuance budget fits plausible conversion demand, since a budget far above it ties up coverage and one far below it means holders reach the limit. The redemption processing commitment, which the issuer is undertaking to meet on its worst day and which is the one term carrying a slashing condition. The lock period, which is how long holders are exposed before an exit window becomes reachable. And the issuer inventory allocation, which is the opening depth holders exit against from the first day.
+
+## Renewals
+
+Renewal proposals go through the same route and carry the same terms.
+
+A renewal that is not approved before maturity does not hold a cycle open. Deprecation begins automatically after a grace period, so a renewal that arrives late is a deprecation whether or not anyone intended one.
+
+## Approval at the close of a deprecation sequence
+
+Procedural. Where the defined conditions are met, approval is the expected outcome, and refusal is available only on enumerated grounds.
+
+This is a check that the sequence ran in order rather than a vote on whether an issuer behaved well.
+
+## What a listing vote does not settle
+
+An approved listing may later fail.
+
+The three constraints in [Governance](/governance/overview) bound the quantity and sequence of an issuer's actions. They do not bound the commercial value of its points, and an issuer that meets every recorded term can still reduce what its point token is worth by changing prices, catalogues, or redemption terms within its own systems.

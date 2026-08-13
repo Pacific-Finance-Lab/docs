@@ -1,0 +1,76 @@
+---
+title: "PAFI token"
+description: "The four functions, staking, supply, and allocation."
+---
+
+## The four functions
+
+| | Function | |
+|---|---|---|
+| 1 | **Governance** | Listing, renewal, and parameter decisions are made by PAFI stakers |
+| 2 | **Issuer staking** | An issuer stakes PAFI as a condition of submitting a listing proposal, in an amount determined with reference to its declared issuance budget |
+| 3 | **Fee benefits** | Fee discounts on protocol transactions through token lock-up |
+| 4 | **Ecosystem incentives** | Quarterly distribution to integrated issuers by transaction volume |
+
+Governance and issuer staking are the load-bearing functions.
+
+## Staking
+
+Staking PAFI is what makes an account a voter. An account that does not hold stake does not vote.
+
+Staked PAFI is not slashable in connection with a listing outcome, and it is not a source of funds for a holder exit window. What is at risk in connection with a listing is the reward recorded against the proposal, described in [Vote rewards](/governance/vote-rewards).
+
+## Lock-up
+
+Locking PAFI discounts protocol transaction fees.
+
+<Info>
+  **Not yet set.** Lock-up tiers and the discounts attached to them are recorded on [Parameters](/developers/parameters).
+</Info>
+
+## Ecosystem incentives
+
+A quarterly distribution to integrated issuers, by transaction volume.
+
+## Voter stake and issuer stake
+
+Two separate mechanisms with separate subjects.
+
+| | Voter stake | Issuer stake |
+|---|---|---|
+| Held by | Any account that votes | The issuer submitting a proposal |
+| Sized by | The account | A governance-set relation to declared issuance budget |
+| Reducible | No | On two enumerated procedural conditions |
+| Funds a holder exit window | No | No |
+
+A holder exit window is funded from the issuer's committed stablecoin, exclusively.
+
+The two enumerated conditions and where a slashed stake goes are in [Terms and commitments](/issuers/listing/terms-and-commitments).
+
+## What the token is not
+
+PAFI is a utility token. Its functions are limited to the four above.
+
+It confers no equity, no ownership, no debt, and no right to profits, dividends, revenues, or returns of any kind.
+
+## Supply and allocation
+
+Total supply is **1,000,000,000 PAFI**.
+
+| Category | Allocation | Cliff | Vesting |
+|---|---|---|---|
+| Community and Ecosystem | 65% (650,000,000) | None | Declining emission |
+| Team and Advisors | 15% (150,000,000) | 12 months | 48 months total |
+| Contributors | 8% (80,000,000) | 12 months | 36 months |
+| Liquidity | 8% (80,000,000) | None | Unlocked at TGE |
+| Strategic Ecosystem | 4% (40,000,000) | 18 months | 45 months total |
+
+The Liquidity allocation is deployed for exchange listings and initial liquidity provisioning.
+
+## Emission
+
+Up to 15% of total supply is unlocked at TGE from the Community and Ecosystem allocation, on predefined milestones, followed by a declining schedule.
+
+Approximately 150,000,000 tokens are distributed at TGE, then approximately 26,000,000 in the first year, 13,000,000 in the second, and 6,500,000 in the third.
+
+The Deficit Reserve is held from this same allocation. See [Deficit Reserve](/governance/deficit-reserve).
