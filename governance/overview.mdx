@@ -17,7 +17,7 @@ Execution follows the recorded outcome rather than an assessment of it, so nothi
   **Not yet set.** The timelock delay is recorded on [Parameters](/developers/parameters).
 </Info>
 
-## What governance sets
+## Global parameters
 
 Global defaults set the bounds. A listing proposal may specify per-token values within them.
 
@@ -44,7 +44,7 @@ For cycles opened or renewed after the change.
 
 A change in global defaults does not reach into an open cycle. An issuer that met `CR_min` at listing does not have to meet a higher one while that cycle is open, and a holder exposed to a cycle is exposed to the terms recorded when it opened.
 
-## What governance cannot do
+## Constraints enforced in code
 
 Three constraints are enforced in code rather than by policy. The terms recorded for a cycle cannot be altered while that cycle is open. Issuance in excess of the budget recorded for a cycle cannot be authorized. And an issuer's committed stablecoin cannot leave its position other than through the recorded paths.
 
