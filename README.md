@@ -15,7 +15,7 @@ learn/               11 concept pages
 issuers/             Overview, Listing, Integration, Running a listing
 governance/          Governance, PAFI token, votes, rewards, Deficit Reserve
 developers/          Integration API, Contracts, Addresses, Parameters, Events
-security/            Audits, Bug bounty, Official domains
+security/            Audits, Official domains
 resources/           Whitepaper, Brand kit, Legal
 ```
 

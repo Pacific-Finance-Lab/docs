@@ -91,7 +91,6 @@
         "group": "Security",
         "pages": [
           "security/audits",
-          "security/bug-bounty",
           "security/official-domains"
         ]
       },
