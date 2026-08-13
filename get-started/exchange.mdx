@@ -1,0 +1,47 @@
+---
+title: "Exchange a point token"
+description: "Exchange a point token against a USD stablecoin on the Gateway."
+---
+
+On the Gateway you exchange a point token against a USD stablecoin.
+
+## Steps
+
+<Steps>
+  <Step title="Open the pool">
+    Every point token has a USD stablecoin pair. Some also have a PAFI pair.
+  </Step>
+  <Step title="Enter an amount">
+    The screen shows what you receive and the price impact.
+  </Step>
+  <Step title="Review">
+    On a thin pool a large sale moves the price against you. Two ways to reduce it. Sell less at once, or check whether the router finds a deeper path.
+  </Step>
+  <Step title="Confirm">
+    <Note>
+      **[S3] Screenshot.** The exchange screen with amount out and price impact. Blocked on UI.
+    </Note>
+  </Step>
+</Steps>
+
+## What sets the price
+
+Supply and demand within the pool. The Gateway does not set or bound prices.
+
+A price you see is not a redemption value. It can sit above or below what the same points are worth inside the issuer's own systems, in either direction and for extended periods.
+
+Neither the Gateway nor the issuer is obliged to buy at any price.
+
+## Routes
+
+The direct stablecoin pair is the primary route and is maintained for every point token. The router takes a PAFI pair instead where it finds that path deeper.
+
+A path through a PAFI pair carries the price movement of PAFI in addition to that of the point token. The direct pair stays available.
+
+## Supplying liquidity
+
+Pools accept liquidity from anyone. A liquidity position changes composition as the price moves and is not the same as holding the asset.
+
+## Checkpoint
+
+Stablecoin is in your account.

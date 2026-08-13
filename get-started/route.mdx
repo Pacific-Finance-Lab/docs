@@ -1,0 +1,44 @@
+---
+title: "Move liquidity to a venue"
+description: "Route stablecoin into a market operated somewhere else."
+---
+
+Routing moves stablecoin you realized on the Gateway into a market operated somewhere else.
+
+## Steps
+
+<Steps>
+  <Step title="Choose a destination">
+    Destinations include perpetual exchanges, centralized exchanges, neobanking rails, and applications that settle in stablecoins.
+  </Step>
+  <Step title="Review the route">
+    The screen returns the resolved parameters and the expected cost before anything is submitted.
+  </Step>
+  <Step title="Confirm">
+    Where the terms change materially between review and confirmation, the action returns for confirmation again.
+
+    You do not open a separate account relationship with the destination, and you do not acquire that venue's native gas asset first.
+  </Step>
+</Steps>
+
+## What changes at the destination
+
+Margin accounts, order matching, funding, and liquidation are the destination venue's, under its own risk engine. Its listings, leverage parameters, and regional eligibility are set there.
+
+PAFI operates the conversion market and the routing layer. See [Who operates what](/learn/who-operates-what).
+
+## Other options
+
+Holding the stablecoin, withdrawing it, and deploying it elsewhere are all available. No destination is privileged by the protocol.
+
+## Price-referenced markets
+
+Commodity and equity markets reached this way are price-referenced. Exposure is to price movement and carries no delivery, no ownership, no voting right, and no dividend.
+
+<Note>
+  A price-referenced perpetual can diverge from the market it tracks, and outside that market's trading hours it reflects expected movement rather than executed trades.
+</Note>
+
+## Checkpoint
+
+The position appears at the destination venue and is managed there.

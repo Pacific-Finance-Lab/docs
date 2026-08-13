@@ -1,0 +1,45 @@
+---
+title: "Convert points to a point token"
+description: "Turn a point balance in an issuer ledger into a point token."
+---
+
+Conversion turns a point balance in an issuer's ledger into a point token in your account.
+
+## Steps
+
+<Steps>
+  <Step title="Request conversion in the issuer's app">
+    Enter the amount. Conversion starts in the app, not on the Gateway.
+  </Step>
+  <Step title="The issuer checks eligibility">
+    Whether a balance is eligible, and in what amount, is the issuer's decision under its own policy.
+  </Step>
+  <Step title="The issuer submits the issuance">
+    Points are deducted and point tokens are created in your account. You do not sign anything for this step.
+  </Step>
+  <Step title="Tokens appear">
+    Issuance takes a few seconds, longer when the network is congested.
+
+    <Note>
+      **[S2] Screenshot.** The conversion screen in an issuer's app. Blocked on UI.
+    </Note>
+  </Step>
+</Steps>
+
+## Why a conversion can fail
+
+| Reason | What it means |
+|---|---|
+| Ineligible under the issuer's policy | The issuer declined. Its policy, not PAFI's |
+| Issuance budget reached | The cycle has an issuance limit and outstanding supply is at it. Redemptions restore budget |
+| Transaction failed | Resubmit. Points are not deducted until it succeeds |
+
+## Going back
+
+Redemption returns tokens to points. It burns the tokens and credits points in the issuer's ledger, and needs both the issuer's approval and yours.
+
+See [The life of a point](/learn/life-of-a-point).
+
+## Checkpoint
+
+The token balance in your account matches the amount deducted from your point balance.
