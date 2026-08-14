@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "sequoia",
+  "theme": "mint",
   "name": "PAFI",
   "colors": {
     "primary": "#0A54EB",
@@ -143,6 +143,14 @@
     "decoration": "gradient",
     "color": {
       "dark": "#080D13"
+    },
+    "image": {
+      "light": "/images/5fa3a9ad91e1cd095934928deef5cee38ef1bbda.png",
+      "dark": "/images/5fa3a9ad91e1cd095934928deef5cee38ef1bbda.png"
     }
+  },
+  "appearance": {
+    "default": "system",
+    "strict": false
   }
 }
