@@ -1,13 +1,16 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "sequoia",
   "name": "PAFI",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#0A54EB",
+    "light": "#13CDD3",
+    "dark": "#1E252F"
   },
-  "favicon": "/favicon.svg",
+  "favicon": {
+    "light": "/images/3.svg",
+    "dark": "/images/3.svg"
+  },
   "navigation": {
     "groups": [
       {
@@ -112,8 +115,9 @@
     ]
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/images/3.svg",
+    "dark": "/images/3.svg",
+    "href": "https://pacificfinance.org/"
   },
   "navbar": {
     "links": [
@@ -134,5 +138,11 @@
       "cursor",
       "vscode"
     ]
+  },
+  "background": {
+    "decoration": "gradient",
+    "color": {
+      "dark": "#080D13"
+    }
   }
 }
