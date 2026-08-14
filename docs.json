@@ -115,8 +115,8 @@
     ]
   },
   "logo": {
-    "light": "/images/1.svg",
-    "dark": "/images/3.svg",
+    "light": "/images/3.svg",
+    "dark": "/images/1.svg",
     "href": "https://pacificfinance.org/"
   },
   "navbar": {
