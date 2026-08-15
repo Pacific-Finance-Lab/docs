@@ -8,8 +8,8 @@
     "dark": "#1E252F"
   },
   "favicon": {
-    "light": "/images/3.svg",
-    "dark": "/images/1(1).svg"
+    "light": "/images/Logo_Fill_B.png",
+    "dark": "/images/Logo_Fill_C.png"
   },
   "navigation": {
     "groups": [
@@ -115,8 +115,8 @@
     ]
   },
   "logo": {
-    "light": "/images/3.svg",
-    "dark": "/images/1.svg",
+    "light": "/images/Logo_Fill_B.png",
+    "dark": "/images/Logo_Fill_C.png",
     "href": "https://pacificfinance.org/"
   },
   "navbar": {
@@ -146,11 +146,11 @@
     },
     "image": {
       "light": "/images/5fa3a9ad91e1cd095934928deef5cee38ef1bbda.png",
-      "dark": "/images/1.png"
+      "dark": "/images/copy_of_bg_shell_scene.png"
     }
   },
   "appearance": {
-    "default": "dark",
+    "default": "light",
     "strict": false
   },
   "fonts": {
