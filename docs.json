@@ -4,12 +4,12 @@
   "name": "PAFI",
   "colors": {
     "primary": "#0A54EB",
-    "light": "#13CDD3",
+    "light": "#ECEDED",
     "dark": "#1E252F"
   },
   "favicon": {
     "light": "/images/3.svg",
-    "dark": "/images/3.svg"
+    "dark": "/images/1(1).svg"
   },
   "navigation": {
     "groups": [
@@ -140,17 +140,20 @@
     ]
   },
   "background": {
-    "decoration": "gradient",
     "color": {
-      "dark": "#080D13"
+      "dark": "#080D13",
+      "light": "#ECEDED"
     },
     "image": {
       "light": "/images/5fa3a9ad91e1cd095934928deef5cee38ef1bbda.png",
-      "dark": "/images/5fa3a9ad91e1cd095934928deef5cee38ef1bbda.png"
+      "dark": "/images/1.png"
     }
   },
   "appearance": {
-    "default": "system",
+    "default": "dark",
     "strict": false
+  },
+  "fonts": {
+    "family": "Geist"
   }
 }
