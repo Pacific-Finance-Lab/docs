@@ -13,10 +13,6 @@ Voting and execution are on-chain. A proposal that passes is queued and executes
 
 Execution follows the recorded outcome rather than an assessment of it, so nothing sits between a passed vote and what happens.
 
-<Info>
-  **Not yet set.** The timelock delay is recorded on [Parameters](/developers/parameters).
-</Info>
-
 ## Global parameters
 
 Global defaults set the bounds. A listing proposal may specify per-token values within them.
@@ -30,13 +26,14 @@ Global defaults set the bounds. A listing proposal may specify per-token values 
 | Grace period | How long after maturity before deprecation begins automatically |
 | Holder exit window length | How long holders have to exchange against committed stablecoin |
 | Timelock delay | How long a passed proposal is queued before execution |
-| Fee rates | The swap protocol fee and the inventory sale fee |
+| Swap protocol fee | Taken on volume in the Gateway pools |
+| Inventory sale fee | Taken on stablecoin paid out to an issuer above its committed amount |
 | Supported quote assets | Which stablecoins may be used as quote assets |
 | Lock-up tiers and fee discounts | What locking PAFI returns |
+| Vote reward sizing | What a voter records, and what counts as completing without incident |
+| Agent rule default caps | The amount, frequency, slippage, and validity ceilings a rule runs under |
 
-<Info>
-  **Not yet set.** Current values are recorded on [Parameters](/developers/parameters).
-</Info>
+Current values are not reproduced here. Each one is set by a governance vote and executes against the contracts.
 
 ## Scope of a parameter change
 
