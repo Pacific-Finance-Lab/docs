@@ -14,7 +14,7 @@ get-started/         4 task pages
 learn/               10 concept pages
 issuers/             Overview, Listing, Integration, Running a listing
 governance/          Governance, PAFI token, votes, rewards, Deficit Reserve
-developers/          Integration API, Contracts, Addresses, Parameters, Events
+developers/          Integration API, Contracts, Addresses, Events
 security/            Audits, Official domains
 resources/           Whitepaper, Brand kit, Legal
 ```

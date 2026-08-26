@@ -44,9 +44,7 @@ You can raise `U` during the cycle while the coverage relation continues to hold
 I  >=  CR_min x (U + L) x P0
 ```
 
-<Info>
-  **Not yet set.** `CR_min` is recorded on [Parameters](/developers/parameters).
-</Info>
+`CR_min` is set by governance.
 
 Two things about `I` matter more than the number.
 
@@ -66,10 +64,6 @@ This is the period a holder is exposed to, and the period during which none of y
 
 Size `I` against capital you can commit for the full period. There is no early exit.
 
-<Info>
-  **Not yet set.** The minimum lock period is recorded on [Parameters](/developers/parameters).
-</Info>
-
 ## Redemption processing commitment
 
 The time within which you credit points once a holder redeems a point token.
@@ -83,10 +77,6 @@ It covers processing time only. What the points are worth once credited stays yo
 Staked before you submit. Not a declared term, a precondition. A proposal from an issuer that has not met the requirement does not proceed.
 
 The required amount is governance-set and scales with the issuance budget you declare.
-
-<Info>
-  **Not yet set.** The protocol-wide minimum and the relation between budget and required stake are recorded on [Parameters](/developers/parameters).
-</Info>
 
 <Info>
   **To confirm.** Whether the requirement is assessed per listing or across an issuer's listings in aggregate.
@@ -115,11 +105,7 @@ Every point token has a USD stablecoin pair, created for you.
 
 You may additionally declare a PAFI pair, which makes liquidity providers already holding PAFI able to supply your market on the day it opens.
 
-Your opening liquidity must be placed within the ranges a standard template permits. Within that template you choose the distribution.
-
-<Info>
-  **Not yet set.** The template is recorded on [Parameters](/developers/parameters).
-</Info>
+Your opening liquidity must be placed within the ranges a governance-set template permits. Within that template you choose the distribution.
 
 ## During a cycle
 

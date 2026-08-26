@@ -13,7 +13,7 @@ In this order, later overrides earlier.
 3. `PAFI Integration Guide for Issuers`, English edition
 4. Engineering documents. `AI Assistant / Overview` is the only basis for the PAFI Agent page
 
-Do not invent a fact the whitepaper does not carry. Where the whitepaper is silent, mark the value `Not yet set` or `To confirm` and link the page that will hold it.
+Do not invent a fact the whitepaper does not carry. Where the whitepaper is silent, mark the value `Not yet set` or `To confirm` and link the page that will hold it. Parameter values are the one exception, see Unresolved values.
 
 ## What these docs are for
 
@@ -146,11 +146,13 @@ This is the only place these docs are less specific than the whitepaper. Reverse
 
 ```mdx
 <Info>
-  **Not yet set.** `CR_min` is a governance-set value. See [Parameters](/developers/parameters).
+  **To confirm.** Whether the staking requirement is assessed per listing or in aggregate.
 </Info>
 ```
 
 Never promise a date. No "will be published in Q3".
+
+**Parameter values are not published in these docs at all.** `CR_min`, the fee rates, the lock period minimum and the rest are set by governance and read from the contracts. Never mark one `Not yet set`, because that promises a number the docs are never going to carry. Say the value is set by governance, in prose, and move on. `Governance` lists what governance sets.
 
 ## Where disclaimers go
 
@@ -227,7 +229,6 @@ Screenshots go only on the four Get Started task pages, after the UI is settled.
 | Item | Blocks |
 |---|---|
 | Point token standard | `To confirm` on `developers/contracts.mdx` |
-| `CR_min`, minimum lock period, staking minimum, exit window length, grace period, timelock delay, fee rates | All of `developers/parameters.mdx`, which 14 callouts across the site point at |
 | Audit reports | `security/audits.mdx` |
 | Contract addresses | `developers/addresses.mdx` |
 | Whether the staking requirement is per listing or aggregate | `To confirm` on `issuers/listing/terms-and-commitments.mdx` |
